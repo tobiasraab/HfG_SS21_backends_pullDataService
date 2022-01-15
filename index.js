@@ -4,8 +4,11 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 // import express
+const cors = require("cors")
 const express = require("express");
 const app = express();
+
+app.use(cors())
 const port = 8080;
 
 // import mongoDB
@@ -24,7 +27,7 @@ let db;
 let collection;
 dbClient.connect((err) => {
   if (err) {
-    console.log("ERROR_MONGODB: ", err);
+    console.error("ERROR_MONGODB: ", err);
   } else {
     console.log("CONNECTED_MONGODB");
 
@@ -85,7 +88,7 @@ app.get("/data", (req, res) => {
       }
     })
     .catch((err) => {
-      console.log("ERROR_MONGODB: ", err);
+      console.error("ERROR_MONGODB: ", err);
     });
 });
 
