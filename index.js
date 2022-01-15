@@ -26,7 +26,7 @@ const { MongoClient, ObjectId } = require("mongodb");
 
 //express server configuration
 const app = express();
-app.use(cors())
+app.use(cors()) // Enable all CORS Requests
 const port = 8080; // has to be the same port as in the Dockerfile
 
 
