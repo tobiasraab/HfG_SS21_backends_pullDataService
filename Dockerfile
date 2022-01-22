@@ -11,6 +11,7 @@ RUN npm install
 # Bundle app source
 COPY . .
 
+# expose the port that is used in express
 EXPOSE 8080
 
 CMD [ "node", "index.js" ]
