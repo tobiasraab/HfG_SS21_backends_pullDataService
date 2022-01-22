@@ -1,7 +1,5 @@
 FROM node:16
 
-LABEL description="This is my test Dockerfile"
-
 # Create app directory
 WORKDIR /usr/src/app
 
